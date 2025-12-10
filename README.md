@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
-## Getting Started
-
-First, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
+
 pnpm dev
-# or
-bun dev
+
 ```
+배포링크 : https://directional-git-main-josunkims-projects.vercel.app
+react 
+nextjs
+chakra-ui 스타일 라이브러리 
+react-query
+axios
+s-cookie
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **게시글 작성 / 조회 / 삭제 (CRUD)**
+- 무한 스크롤 기반 페이지네이션
+- **금칙어 필터**: 아래 단어 포함 시 등록 불가`"캄보디아"`, `"프놈펜"`, `"불법체류"`, `"텔레그램"`
+**(1) 바 차트, 도넛 차트 (`/mock/weekly-mood-trend`, `/mock/popular-snack-brands`)**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 각 데이터 별로 두 가지 차트, 총 4개 차트 구현
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**(2) 스택형 바 / 면적 차트 (`/mock/weekly-mood-trend`, `/mock/weekly-workout-trend`)**
 
-## Learn More
+- X축: `week`
+- Y축: 백분율(%)
+- `/mock/weekly-mood-trend` 각 항목(`happy`, `tired`, `stressed`)이 누적(Stacked) 형태로 표시
+- `/mock/weekly-workout-trend` 각 항목(`running`, `cycling`, `stretching`)이 누적(Stacked) 형태로 표시
+- 각 데이터 별로 두 가지 차트, 총 4개 차트 구현
 
-To learn more about Next.js, take a look at the following resources:
+**(3) 멀티라인 차트 (`/mock/coffee-consumption`, 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- X축: 커피 섭취량(잔/일), 스낵 수
+- 왼쪽 Y축: 버그 수(`bugs`), 회의불참(`meetingMissed`)
+- 오른쪽 Y축: 생산성 점수(`productivity`), 사기(`morale`)
+- 범례(Legend): 팀별 라인 구분
+- 각 팀(Frontend, Backend, AI 등)에 대해 **두 개의 라인** 표시
+    - 실선: 버그 수, 회의불참
+    - 점선: 생산성, 사기
+    - 동일 팀은 동일 색상 유지
+- 각 데이터 별로 차트 구현
